@@ -6,7 +6,7 @@ import asyncio
 
 async def start_bot():
     sqlitedb_start()
-    bot = Bot(token="6800684542:AAFcwWCwBtYhGt98n5L_pVQaEnIgTbDVWKk")
+    bot = Bot(token="")
     dp = Dispatcher()
     dp.include_router(user_commands.router)
     await bot.delete_webhook(drop_pending_updates=True)
