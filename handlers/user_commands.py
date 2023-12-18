@@ -36,7 +36,7 @@ async def game(message: Message, state: FSMContext) -> None:
         await message.answer(f"🎉 Поздравляю, Вы победили!\nВаше загадонное число {message.text}\nЧисло которое выпало {dice_count.dice.value}\n\n🪙 В качестве приза вы выигрываете {coin_count} коин(ов)")
         await users_bd.sqlite_add_money(coin_count, message.from_user.id)
     else:
-        await message.answer(f"🤣🤣🤣 Ты проиграл\nТвое загадонное число {message.text}\nЧисло которое выпало {dice_count.dice.value}\n\nТы мог бы выиграть {coin_count} коин(ов)")
+        await message.answer(f"Ты проиграл\nТвое загадонное число {message.text}\nЧисло которое выпало {dice_count.dice.value}\n\nТы мог бы выиграть {coin_count} коин(ов)")
     await state.clear()
 
 @router.message(F.text == "👤 Пользователь")
